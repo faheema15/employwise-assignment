@@ -178,56 +178,55 @@ const UsersList: React.FC = () => {
         </Box>
         ) : (
           <>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Grid container spacing={3} sx={{ maxWidth: '1200px', justifyContent: 'center' }}>
-              {users?.map(user => (
-              <Grid item xs={12} sm={6} md={3} key={String(user.id)}>
-              <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
-                      <CardMedia
-                        component="img"
-                        sx={{ 
-                          width: 100, 
-                          height: 100, 
-                          borderRadius: '50%',
-                          objectFit: 'cover'
-                        }}
-                        image={user.avatar}
-                        alt={`${user.first_name} ${user.last_name}`}
-                      />
-                    </Box>
-                    <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography gutterBottom variant="h5" component="h2" align="center">
-                        {user.first_name} {user.last_name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary" align="center">
-                        {user.email}
-                      </Typography>
-                      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                        <Button 
-                          startIcon={<EditIcon />} 
-                          variant="outlined" 
-                          color="primary"
-                          onClick={() => handleEditClick(user)}
-                          sx={{ mr: 1 }}
-                        >
-                          Edit
-                        </Button>
-                        <Button 
-                          startIcon={<DeleteIcon />} 
-                          variant="outlined" 
-                          color="error"
-                          onClick={() => handleDeleteClick(user)}
-                        >
-                          Delete
-                        </Button>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-            </Box>
+<Grid container spacing={3} sx={{ maxWidth: '1200px', justifyContent: 'center' }}>
+  {users?.map(user => (
+    <Grid component="div" key={String(user.id)}>
+      <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
+          <CardMedia
+            component="img"
+            sx={{ 
+              width: 100, 
+              height: 100, 
+              borderRadius: '50%',
+              objectFit: 'cover'
+            }}
+            image={user.avatar}
+            alt={`${user.first_name} ${user.last_name}`}
+          />
+        </Box>
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography gutterBottom variant="h5" component="h2" align="center">
+            {user.first_name} {user.last_name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" align="center">
+            {user.email}
+          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+            <Button 
+              startIcon={<EditIcon />} 
+              variant="outlined" 
+              color="primary"
+              onClick={() => handleEditClick(user)}
+              sx={{ mr: 1 }}
+            >
+              Edit
+            </Button>
+            <Button 
+              startIcon={<DeleteIcon />} 
+              variant="outlined" 
+              color="error"
+              onClick={() => handleDeleteClick(user)}
+            >
+              Delete
+            </Button>
+          </Box>
+        </CardContent>
+      </Card>
+    </Grid>
+  ))}
+</Grid>
+
 
             <Box display="flex" justifyContent="center" mt={4}>
               <Pagination 
