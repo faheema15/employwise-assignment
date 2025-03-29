@@ -24,8 +24,8 @@ Ensure you have the following installed before starting:
 ### Steps to Run the Project
 1. Clone the repository:
    ```sh
-   git clone <repository_url>
-   cd users-list-project
+   git clone https://github.com/faheema15/employwise-assignment.git
+   cd employwise-assignment
    ```
 2. Install dependencies:
    ```sh
@@ -37,15 +37,11 @@ Ensure you have the following installed before starting:
    ```
 3. Start the development server:
    ```sh
-   npm start
-   ```
-   or with yarn:
-   ```sh
-   yarn start
+   npm run edv
    ```
 4. Open the application in your browser:
    ```
-   http://localhost:3000
+   http://localhost:5173/
    ```
 
 ## API Assumptions
@@ -54,15 +50,11 @@ Ensure you have the following installed before starting:
 - Editing a user updates state locally (not persisted in the API).
 - Deleting a user removes them from the UI (not persisted in the API).
 
-## Considerations
-- API failures should be handled gracefully.
-- The UI is responsive and works on different screen sizes.
-- Further optimizations could include state management (Redux, Context API) and performance improvements.
+##  Strengths
+- Responsive UI - Adapts well to different screen sizes, ensuring a great user experience across devices.
+- Use of TypeScript – Enhances type safety and reduces potential runtime errors.
+-  Modern Development Tools – Leveraging Vite for faster builds and efficient development.
+-  Linting & Configurations – ESLint and TypeScript configurations help maintain code quality and consistency.
 
 ## Future Enhancements
 - Integrate a backend to persist user changes.
-- Implement authentication.
-- Improve error handling and loading states.
-
-## License
-This project is open-source and can be modified as needed.
